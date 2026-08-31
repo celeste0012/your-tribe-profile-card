@@ -7,7 +7,7 @@
 /* Dit verwijst naar het <html> element. De <html> krijgt een lichtgele achtergrond. */
 
 html {
-  background:lightyellow;
+  background:rgba(131, 218, 255, 0.481);
 }
 
 /* BODY */
@@ -22,7 +22,7 @@ body {
   height: 100vh;
   
   font-family: open sans;
-  color: #5bb0ca; /* de tekst kleur wordt in hex kleuren bepaald. */
+  /* de tekst kleur wordt in hex kleuren bepaald. */
 }
 
 /* ARTICLE */
@@ -70,6 +70,9 @@ h1 {
 /* P */
 /* Hier krijgt de <p> met de class slogan de styling. */
 /* Om een element met class te selecteren gebruik je een . in de selector */
+p.datum {
+  color: #ffffff;
+}
 p.slogan {
   font-size:1.25em;
   color:#030711;
@@ -99,12 +102,12 @@ button {
 /* :hover is een 'Pseudo-class selector', daarmee worden interacties op het element gestyled. */
 button:hover {
   cursor: pointer;
-  background: darkgoldenrod;
+  background: rgba(136, 210, 228, 0.455);
 }
 /* Met de 'Pseudo-class selector' :focus kan je bepalen hoe het element er uit moet zien als de tab toets op het toetsenbord wordt gebruikt. */
 button:focus {
   outline: none;
-  background: darkgoldenrod;
+  background: rgb(50, 164, 202);
 }
 
 /* In het <button> element staat een <svg> voor het icoon. */
@@ -121,7 +124,7 @@ button svg {
 }
 /* Met een komma wordt in een keer de styling op de :hover en de :focus van het <svg> element bepaald. */
 button:hover svg, button:focus svg {
-  stroke: lightyellow;
+  stroke: rgb(255, 255, 255);
 }
 /* Met de 'Pseudo-class selector' :nth-of-type() wordt een element geselecteerd op basis van de volgorde. */
 /* Hier wordt het tweede <svg> element in de button geselecteerd. */
@@ -146,6 +149,7 @@ img {
   
   transition: 1s .15s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
 }
+
 
 /* DL, DT, DD  */
 /* De eigenschappen zijn in de HTML opgemaakt in een Description List element (DL) */
