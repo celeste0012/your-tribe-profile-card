@@ -1,3 +1,38 @@
+@font-face {
+  font-family: manga;
+  src:url(../assets/mangat.ttf);
+}
+
+@font-face {
+  font-family: bush;
+  src:url(../assets/GreatBush.ttf);
+}
+
+@font-face {
+  font-family: plante;
+  src:url(../assets/Plante.ttf);
+}
+
+@font-face{
+  font-family: destiny;
+  src: url(../assets/CFFlowersofDestinyPersonal.ttf);
+}
+
+@font-face {
+  font-family: moon;
+  src: url(../assets/Moonstar.ttf);
+}
+
+@font-face {
+font-family: night;
+src: url(../assets/nightsky.ttf);
+}
+
+@font-face {
+  font-family:carribean ;
+  src: url(../assets/Caribbeantool-GZwO.otf);
+}
+
 * {
   box-sizing: border-box; /* uitleg over wat dit is */
 }
@@ -21,8 +56,9 @@ body {
   
   height: 100vh;
   
-  font-family: open sans;
+  font-family: Arial;
   /* de tekst kleur wordt in hex kleuren bepaald. */
+  
 }
 
 /* ARTICLE */
@@ -37,6 +73,7 @@ article {
   flex-direction: column;
   align-items: center;
   justify-content: end;
+  gap:1em;
   
   width: 50vw;
   max-width: 25em;
@@ -44,10 +81,15 @@ article {
   
   border-radius: 1rem;
   background: rgb(0 239 255);
-  background: linear-gradient(0deg, rgb(0 239 255) 40%, #034758 100%);
+  background: linear-gradient(
+    #034758,
+    rgb(0 239 255),
+    #034758
+    ); 
+  background-size: 100% 200%;
+  background-position: center top;
   box-shadow: 0 0 20px 20px rgb(0 0 0 / .1);
-  
-  transition: .25s;
+  transition: 1s;
 }
 
 /* HEADER */
@@ -62,22 +104,33 @@ header {
 /* H1 */
 /* Hier krijgt het <h1> element de styling. */
 h1 {
-  margin: 2rem 0 1rem 0; /* Margin is de ruimte om het element heen. Boven beginnen, met de klok mee */
+  margin: 32px 0 16px 0; /* Margin is de ruimte om het element heen. Boven beginnen, met de klok mee */
   
   color: rgb(0 239 255); /* De tekst kleur wordt in rgb() bepaald. */
+  text-shadow:2px 3px rgb(0, 0, 0) ; /* De tekst krijgt een schaduw eronder en naast (https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow)*/
+   font-family: 'moon';
+   width:min-content;
+   text-align: center;
+   transition-duration: 1s;
 }
 
 /* P */
 /* Hier krijgt de <p> met de class slogan de styling. */
 /* Om een element met class te selecteren gebruik je een . in de selector */
-p.datum {
+em.datum {
   color: #ffffff;
+  font-family:'Gill Sans';
 }
-p.slogan {
+em.slogan {
   font-size:1.25em;
   color:#030711;
+  font-family: comic sans;
 }
-
+p.me {
+  font-family:'manga';
+  font-weight: 700;
+  font-size: 25px;
+}
 /* BUTTON */
 /* Hier krijgt de <button> de styling. */
 button {
@@ -136,75 +189,62 @@ button svg:nth-of-type(2) {
 
 /* IMG */
 /* Hier krijgt het <img> element de styling. */
-img {
+img.mee {
   position: relative;
-  top: 2rem;
+  /* top: 2rem; */
   
-  width: 10em;
+  width: 8.5vw;
   height: auto;
-  
-  border: 5px solid #fff;
-  border-radius: 10em;
+  /* border: 20px  */
+
+  padding:.5em;
+  background-image: radial-gradient(#9ddbee 60%, rgb(34, 133, 140) );
+  border-radius: 4.25vw 4.25vw 1vw 1vw;
   box-shadow: 0 0 2px 2px rgb(0 0 0 /.2);
-  
-  transition: 1s .15s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
+  transition: 1s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
 }
 
+img.bush {
+ width: 25vw;
+ top: -100vw;
+}
 
 /* DL, DT, DD  */
 /* De eigenschappen zijn in de HTML opgemaakt in een Description List element (DL) */
 /* De Description List element (DL) is een lijst met termen en beschrijvingen. */
 /* In deze DL staan 3 groepen met code skills, in CSS is de layout van de DT elementen met een Grid gepositioneerd.  */
 
-dl {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "html-dd css-dd js-dd"
-    "html-dt css-dt js-dt"
-    ;
+ul {
+  margin:0;
+  padding:0;
+  list-style-type:"";
+
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:.5em;
+  align-items: center;
   justify-items: center;
-  align-items: start;
-  
-  width: 100%;
-  margin-top: -3rem;
-  margin-bottom: 0;
-  padding: 5rem 0 3rem;
-  
-  text-align: center;
-  background: rgb(255 255 255);
 
-  dt {
-    margin-top: .25rem;
-    padding-top: .25rem;
-    
-    border-top: 1px solid rgb(0 0 0 / 0.3);
-    font-weight: bold;
-    
-    &:nth-of-type(1) {
-      grid-area: html-dt;
-    }
-    
-    &:nth-of-type(2) {
-      grid-area: css-dt;
-      translate:0 1rem;
-    }
-    
-    &:nth-of-type(3) {
-      grid-area: js-dt;
-    }
-  }
+  padding:0 1,5em;
+  
+  transition-duration: 1s;
+}
 
-  dd {
-    margin: 0;
-    padding-left: .3rem;
-    
-    transition: .25s .3s;
-    
-    &:nth-of-type(2) {
-      translate:0 1rem;
-    }
-  }
+li {
+  text-align:center;
+  color: #85e1a8;
+  text-shadow: #13573d 2px 2px;
+  font-family: bush;
+  font-size: 25px;
+}
+
+li:nth-of-type(1) {
+  translate: 0 -3em;
+}
+
+
+li:nth-of-type(3) {
+  translate: 0 -3em;
 }
 
 /* P */
@@ -221,7 +261,7 @@ article > p {
   margin-top: 0;
   padding: 3rem 2rem;
   
-  background: rgb(255 255 255 / 0.5);
+  /* background: rgb(255 255 255 / 0.5); */
   border-radius: 0 0 1rem 1rem;
   text-align: center;
 }
@@ -229,11 +269,17 @@ article > p {
 /* Deze styles zijn van toepassing als op de knop wordt geklikt */
 body.is-expanded {
   font-size: 1.15em;
+  
 }
 
 body.is-expanded article {
   width: 60vw;
   max-width: 60vw;
+  transition: 2s;
+  /* background: linear-gradient(0deg, #034758 40%, rgb(0 239 255) 100%); */
+  background-position: center bottom;
+
+  color: #ffffff;
 }
 
 body.is-expanded button svg:first-of-type {
@@ -251,5 +297,29 @@ body.is-expanded dl dd {
 }
 
 body.is-expanded img {
-  width: 15em;
+  width: 16vw;  
+
+   border-radius: 8vw;
+}
+
+body.is-expanded p{
+  opacity: 100%;
+}
+
+body.is-expanded dl {
+opacity: 0%;
+}
+
+
+
+body.is-expanded h1 {
+  color: rgb(37, 106, 106);
+  font-family: night;
+  font-size: 250%;
+}
+
+body.is-expanded li {
+font-family:carribean ;
+color: #5ed7fb;
+font-size: 100%;
 }
