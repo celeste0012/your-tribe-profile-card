@@ -292,9 +292,6 @@ body.is-expanded button svg:nth-of-type(2) {
   transition-delay: .25s;
 }
 
-body.is-expanded dl dd {
-  font-size: 1.75em;
-}
 
 body.is-expanded img {
   width: 16vw;  
@@ -305,11 +302,6 @@ body.is-expanded img {
 body.is-expanded p{
   opacity: 100%;
 }
-
-body.is-expanded dl {
-opacity: 0%;
-}
-
 
 
 body.is-expanded h1 {
