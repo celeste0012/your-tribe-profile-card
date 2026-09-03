@@ -204,9 +204,12 @@ img.mee {
   transition: 1s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
 }
 
-img.bush {
- width: 25vw;
- top: -100vw;
+
+img.loading {
+ top: 11vw ;
+ width:auto;
+ height:5vw;
+ position:fixed;
 }
 
 /* DL, DT, DD  */
@@ -293,7 +296,7 @@ body.is-expanded button svg:nth-of-type(2) {
 }
 
 
-body.is-expanded img {
+body.is-expanded img.mee {
   width: 16vw;  
 
    border-radius: 8vw;
@@ -315,3 +318,4 @@ font-family:carribean ;
 color: #5ed7fb;
 font-size: 100%;
 }
+
