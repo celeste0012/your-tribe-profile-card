@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: bush;
-  src:url(../assets/GreatBush.ttf);
+  src:url(../assets/ble.ttf);
 }
 
 @font-face {
@@ -29,10 +29,19 @@ src: url(../assets/nightsky.ttf);
 }
 
 @font-face {
-  font-family:carribean ;
+  font-family: carribean ;
   src: url(../assets/Caribbeantool-GZwO.otf);
 }
 
+@font-face {
+  font-family: celestial;
+  src: url(../assets/Celestial.ttf);
+}
+
+@font-face {
+font-family: magic;
+src: url(../assets/Magician.ttf);
+}
 * {
   box-sizing: border-box; /* uitleg over wat dit is */
 }
@@ -191,31 +200,19 @@ button svg:nth-of-type(2) {
 /* Hier krijgt het <img> element de styling. */
 img.mee {
   position: relative;
-  /* top: 2rem; */
   
   width: 8.5vw;
   height: auto;
-  /* border: 20px  */
+  min-width:50px ;
 
   padding:.5em;
   background-image: radial-gradient(#9ddbee 60%, rgb(34, 133, 140) );
   border-radius: 4.25vw 4.25vw 1vw 1vw;
   box-shadow: 0 0 2px 2px rgb(0 0 0 /.2);
-  transition: 1s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde en beginnen 0.15 seconde later */
+  transition: 1s; /* Transition Shorthand notation: Transities op het img element duren 1 seconde */
 }
 
 
-img.loading {
- top: 11vw ;
- width:auto;
- height:5vw;
- position:fixed;
-}
-
-/* DL, DT, DD  */
-/* De eigenschappen zijn in de HTML opgemaakt in een Description List element (DL) */
-/* De Description List element (DL) is een lijst met termen en beschrijvingen. */
-/* In deze DL staan 3 groepen met code skills, in CSS is de layout van de DT elementen met een Grid gepositioneerd.  */
 
 ul {
   margin:0;
@@ -236,10 +233,54 @@ ul {
 li {
   text-align:center;
   color: #85e1a8;
-  text-shadow: #13573d 2px 2px;
+  text-shadow: #13573d 0.5px 1px;
   font-family: bush;
-  font-size: 25px;
+  font-size: 18px;
 }
+
+loader {
+		width: 0;
+		aspect-ratio:1;
+
+		display:grid;
+		place-items:center;
+
+    translate: 9em  -0.5em;
+    
+	}
+
+streepje {
+	grid-area:1/1;
+	
+	display:block;
+	width:.75em;
+	aspect-ratio:3;
+	border-radius:1em;
+
+
+	transform:
+		rotateZ( calc( sibling-index() * 360deg / 9) )
+		translateX(0.9em);
+  
+  @media (prefers-reduced-motion:no-preference)  {
+	animation-name: --streepje-ani;
+	animation-duration:2s;
+	animation-iteration-count: infinite;
+	animation-delay: calc( 2s / sibling-count() * sibling-index() - 2s );	
+}
+}
+
+@keyframes --streepje-ani {
+	0% {
+		background-color:#000;
+	}
+
+	100% {
+		background-color:#0003;
+	}
+}
+
+
 
 li:nth-of-type(1) {
   translate: 0 -3em;
@@ -309,13 +350,13 @@ body.is-expanded p{
 
 body.is-expanded h1 {
   color: rgb(37, 106, 106);
-  font-family: night;
+  font-family: celestial;
   font-size: 250%;
 }
 
 body.is-expanded li {
-font-family:carribean ;
-color: #5ed7fb;
-font-size: 100%;
+font-family: magic;
+color: #8ae2fd;
+font-size: 190%;
 }
 
