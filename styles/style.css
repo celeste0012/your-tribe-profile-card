@@ -256,18 +256,23 @@ streepje {
 	width:.75em;
 	aspect-ratio:3;
 	border-radius:1em;
-
+  /* background-color: #000; */
 
 	transform:
 		rotateZ( calc( sibling-index() * 360deg / 9) )
 		translateX(0.9em);
-  
-  @media (prefers-reduced-motion:no-preference)  {
-	animation-name: --streepje-ani;
+  	animation-name: --streepje-ani;
+    animation-duration: 10s;
+	  animation-delay: calc( 10s / sibling-count() * sibling-index() - 10s );	
+    animation-iteration-count: infinite;
+    @media(prefers-reduced-motion: no-preference){
+
 	animation-duration:2s;
 	animation-iteration-count: infinite;
 	animation-delay: calc( 2s / sibling-count() * sibling-index() - 2s );	
-}
+ 
+    
+  }
 }
 
 @keyframes --streepje-ani {
